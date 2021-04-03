@@ -1,5 +1,366 @@
+@charset "UTF-8";
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translateY(-45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes show-left {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+[data-animation=show-up] {
+  animation: show-up 1s forwards;
+}
+
+[data-animation=show-down] {
+  animation: show-down 1s forwards;
+}
+
+[data-animation=show-left] {
+  animation: show-left 1s forwards;
+}
+
+[data-animation=show-right] {
+  animation: show-right 1s forwards;
+}
+
+:root {
+  --body-bg: #222;
+  --text: #eee;
+  --title-icons: #f8edeb;
+  --nav-bg: #333;
+  --highlight: #f4a261;
+}
+
+.light-mode:root {
+  --body-bg: #f8edeb;
+  --text: #333;
+  --title-icons: #222;
+  --nav-bg: #ced4da;
+  --highlight: #e85d04;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
 body {
-  background: #222;
+  background: var(--body-bg);
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 120px repeat(4, 1fr) 120px 1fr;
+    grid-template-rows: 120px 1fr 200px;
+    min-height: 100vh;
+    margin: 0;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@media only screen and (min-width: 1024px) {
+  header {
+    grid-column: 2/8;
+    grid-row: 1;
+  }
+}
+
+.theme-toggle {
+  width: 35px;
+  height: 35px;
+}
+.theme-toggle i {
+  color: var(--title-icons);
+  font-size: 24px;
+}
+@media only screen and (min-width: 1024px) {
+  .theme-toggle {
+    align-self: center;
+    cursor: pointer;
+  }
+  .theme-toggle i {
+    padding: 0.5rem;
+  }
+  .theme-toggle i:hover {
+    color: var(--highlight);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #root {
+    width: 100%;
+    grid-column: 3/7;
+    grid-row: 2/3;
+  }
+}
+
+#home {
+  position: relative;
+  margin-top: 10rem;
+  height: 200px;
+}
+#home p {
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  color: var(--text);
+}
+#home h1 {
+  font-family: "Cormorant Upright", serif;
+  line-height: 80%;
+  letter-spacing: 0.05em;
+  font-size: 4.688rem;
+  color: var(--title-icons);
+  margin: 10px 0 10px 0.4rem;
+}
+@media only screen and (min-width: 1024px) {
+  #home {
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #home p {
+    font-family: "Source Code Pro", monospace;
+    letter-spacing: 0.05em;
+    font-size: 1.125rem;
+  }
+  #home h1 {
+    font-family: "Cormorant Upright", serif;
+    line-height: 80%;
+    letter-spacing: 0.05em;
+    font-size: 10rem;
+    width: 550px;
+    margin: 15px 0 15px 0.7rem;
+  }
+}
+
+nav {
+  height: 60px;
+  box-sizing: border-box;
+  background: var(--nav-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+nav img {
+  width: 53px;
+  height: 40px;
+}
+nav .menu-button {
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--title-icons);
+  padding: 0.2rem 0.3rem;
+  width: 80px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+nav .menu-button::before {
+  content: "☰";
+  font-size: 20px;
+  color: var(--title-icons);
+  margin-right: 0.2rem;
+  transition: 0.3s;
+}
+nav .menu-button.active::before {
+  transform: rotate(-90deg);
+}
+@media only screen and (min-width: 1024px) {
+  nav .menu-button {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  nav {
+    display: contents;
+    position: initial;
+    width: 100%;
+    align-self: center;
+  }
+  nav img {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: center;
+    animation: show-up 1s forwards;
+  }
+}
+
+.menu {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: var(--nav-bg);
+  bottom: 60px;
+  left: 0;
+  list-style: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.1s, opacity 0.2s linear;
+}
+.menu li {
+  width: 140px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+.menu li a {
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  color: var(--title-icons);
+  text-decoration: none;
+}
+.menu.active {
+  visibility: initial;
+  opacity: 1;
+  transition: 0.2s linear;
+}
+@media only screen and (min-width: 1024px) {
+  .menu {
+    visibility: initial;
+    position: initial;
+    background: none;
+    align-self: center;
+    width: 150%;
+    opacity: 1;
+    grid-column: 3/5;
+    grid-row: 3;
+    justify-content: flex-start;
+    animation: show-up 1s forwards;
+  }
+  .menu li {
+    padding: 10px;
+    width: initial;
+  }
+  .menu a:hover {
+    color: var(--highlight);
+  }
+}
+
+.links {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .links {
+    display: flex;
+    grid-column: 7;
+    grid-row: 3;
+    justify-self: self-end;
+    align-self: center;
+  }
+  .links a {
+    color: var(--title-icons);
+    font-size: 1.48rem;
+    padding: 0.5rem;
+  }
+  .links a:hover {
+    color: var(--highlight);
+  }
+  .links a:last-child {
+    margin-left: 1rem;
+  }
+}
+
+.bg-detail {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.bg-detail.dt1 {
+  top: 10%;
+  transform: rotate(40deg);
+}
+.bg-detail.dt2 {
+  top: 10%;
+  transform: rotate(-40deg);
+}
+.bg-detail path {
+  fill: var(--nav-bg);
+}
+@media only screen and (min-width: 1024px) {
+  .bg-detail {
+    display: initial;
+    max-width: initial;
+    max-height: initial;
+    min-height: 100%;
+  }
+  .bg-detail.dt1 {
+    top: -10%;
+    left: 35%;
+    transform: rotate(55deg);
+  }
+  .bg-detail.dt2 {
+    left: 20%;
+    transform: rotate(-50deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

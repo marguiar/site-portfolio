@@ -1,0 +1,55 @@
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translateY(-45px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes show-left {
+  from {
+    opacity: 0;
+    transform: translateX(-45px);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+[data-animation="show-up"] {
+  animation: show-up 1s forwards;
+}
+
+[data-animation="show-down"] {
+  animation: show-down 1s forwards;
+}
+
+[data-animation="show-left"] {
+  animation: show-left 1s forwards;
+}
+
+[data-animation="show-right"] {
+  animation: show-right 1s forwards;
+}

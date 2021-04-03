@@ -1,0 +1,47 @@
+:root {
+  --body-bg: #222;
+  --text: #eee;
+  --title-icons: #f8edeb;
+  --nav-bg: #333;
+  --highlight: #f4a261;
+} 
+
+.light-mode:root {
+  --body-bg: #f8edeb;
+  --text: #333;
+  --title-icons: #222;
+  --nav-bg: #ced4da;
+  --highlight: #e85d04;
+}
+
+$serif: 'Cormorant Upright';
+$monospace: 'Source Code Pro';
+
+@mixin serif($size) {
+  font-family: $serif, serif;
+  line-height: 80%;
+  letter-spacing: 0.05em;
+  @if $size == 160 {
+    font-size: 10rem;
+  } @else if $size == 75 {
+    font-size: 4.688rem;
+  }
+}
+
+@mixin monospace($size) {
+  font-family: $monospace, monospace;
+  letter-spacing: 0.05em;
+  @if $size == 18 {
+    font-size: 1.125rem;
+  } @else if $size == 16 {
+    font-size: 1rem;
+  }
+}
+
+@mixin device($device) {
+ @if $device == desktop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+}
