@@ -25,6 +25,8 @@ $monospace: 'Source Code Pro';
     font-size: 10rem;
   } @else if $size == 75 {
     font-size: 4.688rem;
+  } @else if $size == 32 {
+    font-size: 2rem;
   }
 }
 

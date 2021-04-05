@@ -10,12 +10,12 @@
     ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@700&family=Source+Code+Pro:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
-    <title>Marcos A. | Website</title>
+    <link rel="shortcut icon" href="./assets/favico.svg" type="image/x-icon">
+    <title>Marcos A. | Início</title>
   </head>
   <body>
     <header data-animation="show-down">
@@ -25,13 +25,15 @@
       <img src="./assets/photo.jpg" alt="foto">
     </header>
 
-    <div id="root" data-animation="show-left">
-      <div id="home">
-        <div>
+    <div class="title-container" data-animation="show-down">
+      <h2 class="page-title" data-animation="show-down">Início</h2>
+    </div>
+
+    <div id="root" >
+      <div class="container home-page" data-animation="show-left">
           <p>Olá! Me chamo,</p>
           <h1>Marcos Antonio</h1>
           <p>Sou estudante de desenvolvimento Web!</p>
-        </div>
       </div>
     </div>
 
@@ -39,10 +41,10 @@
       <img src="./assets/logo.svg" alt="logo"/>
       <button class="menu-button">Menu</button>
       <ul class="menu">
-        <li><a href="/">Início</a></li>
-        <li><a href="/sobre">Sobre Mim</a></li>
-        <li><a href="/projetos">Projetos</a></li>
-        <li><a href="/contato">Contato</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="pages/sobre.html">Sobre Mim</a></li>
+        <li><a href="pages/projetos.html">Projetos</a></li>
+        <li><a href="pages/contato.html">Contato</a></li>
       </ul>
     </nav>
 
