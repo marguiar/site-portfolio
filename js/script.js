@@ -1,37 +1,12 @@
-function menuMobile() {
-  const btnMobile = document.querySelector('nav button');
-  const menu = document.querySelector('.menu');
+import menuMobile from './modules/menuMobile.js';
+import toggleTheme from './modules/toggleTheme.js';
+import Slide from './modules/slide.js';
+import projectsNavigation from './modules/projects-navigation.js';
 
-  function handleClick() {
-    btnMobile.classList.toggle('active');
-    menu.classList.toggle('active');
-  }
-
-  btnMobile.addEventListener('click', handleClick);
-}
+const slide = new Slide();
 
 menuMobile();
-
-function toggleTheme() {
-  const btnToggleTheme = document.querySelector('.theme-toggle');
-  const iconTheme = document.querySelector('.fa-sun');
-
-  function handleClick() {
-    document.documentElement.classList.toggle('light-mode');
-    if (iconTheme.classList[1] === 'fa-sun') {
-      iconTheme.classList.remove('fa-sun');
-      iconTheme.classList.add('fa-moon');
-    } else {
-      iconTheme.classList.remove('fa-moon');
-      iconTheme.classList.add('fa-sun');
-    }
-  }
-
-  btnToggleTheme.addEventListener('click', handleClick);
-}
-
 toggleTheme();
-const links = document.querySelectorAll('ul a');
 
 function singlePageApplication() {
   const links = document.querySelectorAll('ul a');
@@ -45,34 +20,44 @@ function singlePageApplication() {
     const newPage = container.querySelector('#root');
     const oldTitle = document.querySelector('.title-container');
     const newTitle = container.querySelector('.title-container');
+
     oldPage.innerHTML = newPage.innerHTML;
     oldTitle.innerHTML = newTitle.innerHTML;
     document.title = container.querySelector('title').innerText;
+  }
+
+  function activeScripts() {
+    const pathName = window.location.pathname;
+    if (pathName === '/projetos') projectsNavigation();
   }
 
   async function fetchPage(url) {
     const response = await fetch(url);
     const pageContent = await response.text();
     updatePage(pageContent);
+    activeScripts();
   }
 
   function handleClick(e) {
     e.preventDefault();
     const url = e.target.href;
-
     fetchPage(url);
-    window.history
-      .pushState(
-        null, null,
-        url.replace('pages/', '').replace('.html', '').replace('index', ''),
-      );
+    window.history.pushState(
+      null,
+      null,
+      url.replace('pages/', '').replace('.html', '').replace('index', ''),
+    );
   }
 
   window.addEventListener('popstate', () => {
     let previousPage = window.location.pathname;
 
-    if (previousPage === '/sobre') {
-      previousPage = ('/pages/sobre.html');
+    if (
+      previousPage === '/sobre'
+      || previousPage === '/projetos'
+      || previousPage === '/contato'
+    ) {
+      previousPage = `/pages${previousPage}.html`;
     }
 
     fetchPage(previousPage);
