@@ -1,5 +1,5 @@
 nav {
-  height: 60px;
+  height: 50px;
   box-sizing: border-box;
   background: var(--nav-bg);
   display: flex;
@@ -68,7 +68,7 @@ nav {
   align-items: center;
   position: absolute;
   background: var(--nav-bg);
-  bottom: 60px;
+  bottom: 50px;
   left: 0;
   list-style: none;
   visibility: hidden;
@@ -84,15 +84,23 @@ nav {
   li {
     width: 140px;
     font-weight: bold;
-    padding: 10px 20px;
 
     a {
       @include monospace(16);
       color: var(--title-icons);
       text-decoration: none;
+      padding: 10px 20px;
 
       &.active {
         color: var(--highlight);
+      }
+
+      @include device(desktop) {
+        padding: 10px;
+
+        &:hover {
+          color: var(--highlight);
+        }
       }
     }
   }
@@ -102,7 +110,7 @@ nav {
     position: initial;
     background: none;
     align-self: center;
-    width: 100% + 50%;
+    min-width: 395px;
     opacity: 1;
     grid-column: 3 / 5;
     grid-row: 3;
@@ -110,14 +118,7 @@ nav {
     animation: show-up 1s forwards;
 
     li {
-      padding: 10px;
       width: initial;
-    }
-
-    a {
-      &:hover {
-        color: var(--highlight);
-      }
     }
   }
 }

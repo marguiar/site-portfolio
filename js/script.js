@@ -1,17 +1,14 @@
 import menuMobile from './modules/menuMobile.js';
 import toggleTheme from './modules/toggleTheme.js';
-import Slide from './modules/slide.js';
 import projectsNavigation from './modules/projects-navigation.js';
-
-const slide = new Slide();
+import isEmployed from './modules/is-employed.js';
 
 menuMobile();
 toggleTheme();
 
-function singlePageApplication() {
-  const links = document.querySelectorAll('ul a');
-  links[0].classList.add('active');
+const links = document.querySelectorAll('ul a');
 
+function singlePageApplication() {
   function updatePage(newContent) {
     const container = document.createElement('div');
     container.innerHTML = newContent;
@@ -28,7 +25,9 @@ function singlePageApplication() {
 
   function activeScripts() {
     const pathName = window.location.pathname;
+
     if (pathName === '/projetos') projectsNavigation();
+    else if (pathName === '/contato') isEmployed(false);
   }
 
   async function fetchPage(url) {
@@ -50,22 +49,27 @@ function singlePageApplication() {
   }
 
   window.addEventListener('popstate', () => {
-    let previousPage = window.location.pathname;
+    let whichPage = window.location.pathname;
 
     if (
-      previousPage === '/sobre'
-      || previousPage === '/projetos'
-      || previousPage === '/contato'
+      whichPage === '/sobre'
+      || whichPage === '/projetos'
+      || whichPage === '/contato'
     ) {
-      previousPage = `/pages${previousPage}.html`;
+      whichPage = `/pages${whichPage}.html`;
     }
 
-    fetchPage(previousPage);
+    fetchPage(whichPage);
   });
 
   links.forEach((link) => {
-    link.classList.remove('active');
-    link.addEventListener('click', handleClick);
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const pathName = window.location.pathname;
+      if (link.id !== pathName) {
+        handleClick(e);
+      }
+    });
   });
 }
 

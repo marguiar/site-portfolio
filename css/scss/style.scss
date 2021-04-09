@@ -15,13 +15,13 @@ body {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 20px minmax(min-content, 73vh);
-  margin: 10px;
+  grid-template-rows: 55px 20px minmax(min-content, 72vh);
+  margin: 15px 20px;
 
   @include device(desktop) {
     display: grid;
     grid-template-columns: 1fr 120px repeat(4, 1fr) 120px 1fr;
-    grid-template-rows: 120px 1fr 200px;
+    grid-template-rows: 120px 1fr 160px;
     min-height: 100vh;
     margin: 0;
   }
@@ -139,9 +139,17 @@ header {
   
   h1 {
     @include serif(75);
-    width: 290px;
+    max-width: 290px;
     color: var(--title-icons);
     margin: 10px 0 10px .4rem;
+  }
+
+  p:last-child {
+    width: 250px;
+
+    @include device(desktop) {
+      width: initial;
+    }
   }
 
   @include device(desktop) {
@@ -153,6 +161,7 @@ header {
       width: 550px;
       margin: 15px 0 15px .7rem;
     }
+
   }
 }
 
@@ -202,26 +211,46 @@ header {
 .projects-page {
   overflow: hidden;
   width: 95%;
+  height: 100%;
   margin: 0 auto;
+
+  @include device(desktop) {
+    margin: 0;
+    width: 100%;
+  }
 
   ul {
     width: 100%;
     list-style: none;
     display: flex;
-    justify-content: space-between;
     margin: 1.5rem auto .7rem;
+
   }
 
   li {
     opacity: .5;
+    margin-right: 1.125rem;
 
     &.active {
       opacity: 1;
     }
 
     img {
-      width: 60px;
-      height: 60px;
+      width: 35px;
+      height: 35px;
+    }
+
+    @include device(desktop) {
+      cursor: pointer;
+
+      &:hover {
+        opacity: .9;
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 
@@ -234,11 +263,30 @@ header {
     &.active {
       display: initial;
       animation: show-left 1s forwards;
+
+      @include device(desktop) {
+        display: flex;
+        align-items: center;
+      }
+
+      div {
+        @include device(desktop) {
+          max-width: 420px;
+        }
+      }
     }
 
     img {
       width: 100%;
-      height: 200px;
+      max-width: 400px;
+      min-height: 140px;
+
+      @include device(desktop) {
+        width: 300px;
+        height: 240px;
+        margin-right: 1.125rem;
+        
+      }
     }
 
     h3 {
@@ -258,9 +306,9 @@ header {
       color: var(--title-icons);
       text-decoration: none;
       font-weight: bold;
+      margin-right: 1rem;
     }
   }
-
 }
 
 .contact-page {
@@ -280,6 +328,13 @@ header {
     }
   }
 
+  div {
+    @include device(desktop) {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
   ul {
     list-style: none;
   }
@@ -292,6 +347,10 @@ header {
     justify-content: center;
     margin: 0 auto .7rem;
     background: var(--nav-bg);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @include device(desktop) {
       margin: 0 0 .9rem;
@@ -312,6 +371,43 @@ header {
 
     i {
       font-size: 24px;
+    }
+  }
+
+  .job {
+    margin: 1rem auto 0;
+    display: flex;
+    align-items: center;
+    width: 160px;
+    @include monospace(14);
+    font-size: 12px;
+    color: var(--text);
+
+    @include device(desktop) {
+      width: 100%;
+      margin: 0 0 .7rem 1.5rem;
+    }
+
+    &::before {
+      display: inline-block;
+      content: '';
+      width: 22px;
+      height: 12px;
+      margin-right: .5rem;
+      border-radius: 50%;
+      background: #70e000;
+
+      @include device(desktop) {
+        width: 12px;
+      }
+    }
+
+    &.employed {
+      width: 190px;
+
+      &::before {
+        background: #e71d36;
+      }
     }
   }
 }

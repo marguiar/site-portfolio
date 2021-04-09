@@ -72,7 +72,7 @@
 }
 
 nav {
-  height: 60px;
+  height: 50px;
   box-sizing: border-box;
   background: var(--nav-bg);
   display: flex;
@@ -111,12 +111,12 @@ nav .menu-button::before {
 nav .menu-button.active::before {
   transform: rotate(-90deg);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   nav .menu-button {
     display: none;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   nav {
     display: contents;
     position: initial;
@@ -140,7 +140,7 @@ nav .menu-button.active::before {
   align-items: center;
   position: absolute;
   background: var(--nav-bg);
-  bottom: 60px;
+  bottom: 50px;
   left: 0;
   list-style: none;
   visibility: hidden;
@@ -155,7 +155,6 @@ nav .menu-button.active::before {
 .menu li {
   width: 140px;
   font-weight: bold;
-  padding: 10px 20px;
 }
 .menu li a {
   font-family: "Source Code Pro", monospace;
@@ -163,17 +162,26 @@ nav .menu-button.active::before {
   font-size: 1rem;
   color: var(--title-icons);
   text-decoration: none;
+  padding: 10px 20px;
 }
 .menu li a.active {
   color: var(--highlight);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
+  .menu li a {
+    padding: 10px;
+  }
+  .menu li a:hover {
+    color: var(--highlight);
+  }
+}
+@media only screen and (min-width: 940px) {
   .menu {
     visibility: initial;
     position: initial;
     background: none;
     align-self: center;
-    width: 150%;
+    min-width: 395px;
     opacity: 1;
     grid-column: 3/5;
     grid-row: 3;
@@ -181,11 +189,7 @@ nav .menu-button.active::before {
     animation: show-up 1s forwards;
   }
   .menu li {
-    padding: 10px;
     width: initial;
-  }
-  .menu a:hover {
-    color: var(--highlight);
   }
 }
 
@@ -202,14 +206,14 @@ body {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 20px minmax(min-content, 73vh);
-  margin: 10px;
+  grid-template-rows: 55px 20px minmax(min-content, 72vh);
+  margin: 15px 20px;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   body {
     display: grid;
     grid-template-columns: 1fr 120px repeat(4, 1fr) 120px 1fr;
-    grid-template-rows: 120px 1fr 200px;
+    grid-template-rows: 120px 1fr 160px;
     min-height: 100vh;
     margin: 0;
   }
@@ -233,7 +237,7 @@ header img {
   height: 50px;
   border-radius: 50%;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   header {
     grid-column: 2/8;
     grid-row: 1;
@@ -248,7 +252,7 @@ header img {
   color: var(--title-icons);
   font-size: 24px;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .theme-toggle {
     align-self: center;
     cursor: pointer;
@@ -264,7 +268,7 @@ header img {
 .title-container {
   grid-row: 2;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .title-container {
     grid-column: 3/5;
     grid-row: 1;
@@ -283,7 +287,7 @@ header img {
   font-weight: normal;
   text-align: center;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .page-title {
     font-family: "Cormorant Upright", serif;
     line-height: 80%;
@@ -300,7 +304,7 @@ header img {
   display: flex;
   align-items: center;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   #root {
     height: 100%;
     min-height: initial;
@@ -320,7 +324,7 @@ header img {
   font-size: 1rem;
   color: var(--text);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .container {
     width: 100%;
     height: 100%;
@@ -341,11 +345,19 @@ header img {
   line-height: 80%;
   letter-spacing: 0.05em;
   font-size: 4.688rem;
-  width: 290px;
+  max-width: 290px;
   color: var(--title-icons);
   margin: 10px 0 10px 0.4rem;
 }
-@media only screen and (min-width: 1024px) {
+.home-page p:last-child {
+  width: 250px;
+}
+@media only screen and (min-width: 940px) {
+  .home-page p:last-child {
+    width: initial;
+  }
+}
+@media only screen and (min-width: 940px) {
   .home-page {
     margin-top: 0;
     display: flex;
@@ -384,7 +396,7 @@ header img {
   font-size: 1.5rem;
   color: var(--title-icons);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .about-page p {
     width: 500px;
   }
@@ -399,24 +411,43 @@ header img {
 .projects-page {
   overflow: hidden;
   width: 95%;
+  height: 100%;
   margin: 0 auto;
+}
+@media only screen and (min-width: 940px) {
+  .projects-page {
+    margin: 0;
+    width: 100%;
+  }
 }
 .projects-page ul {
   width: 100%;
   list-style: none;
   display: flex;
-  justify-content: space-between;
   margin: 1.5rem auto 0.7rem;
 }
 .projects-page li {
   opacity: 0.5;
+  margin-right: 1.125rem;
 }
 .projects-page li.active {
   opacity: 1;
 }
 .projects-page li img {
-  width: 60px;
-  height: 60px;
+  width: 35px;
+  height: 35px;
+}
+@media only screen and (min-width: 940px) {
+  .projects-page li {
+    cursor: pointer;
+  }
+  .projects-page li:hover {
+    opacity: 0.9;
+  }
+  .projects-page li img {
+    width: 60px;
+    height: 60px;
+  }
 }
 .projects-page section {
   width: 100%;
@@ -428,9 +459,28 @@ header img {
   display: initial;
   animation: show-left 1s forwards;
 }
+@media only screen and (min-width: 940px) {
+  .projects-page section.active {
+    display: flex;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 940px) {
+  .projects-page section.active div {
+    max-width: 420px;
+  }
+}
 .projects-page section img {
   width: 100%;
-  height: 200px;
+  max-width: 400px;
+  min-height: 140px;
+}
+@media only screen and (min-width: 940px) {
+  .projects-page section img {
+    width: 300px;
+    height: 240px;
+    margin-right: 1.125rem;
+  }
 }
 .projects-page section h3 {
   font-family: "Source Code Pro", monospace;
@@ -453,6 +503,7 @@ header img {
   color: var(--title-icons);
   text-decoration: none;
   font-weight: bold;
+  margin-right: 1rem;
 }
 
 .contact-page {
@@ -468,7 +519,7 @@ header img {
   margin: 0 auto 1.5rem;
   text-align: center;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .contact-page h3 {
     font-family: "Cormorant Upright", serif;
     line-height: 80%;
@@ -476,6 +527,12 @@ header img {
     font-size: 2rem;
     margin: 0 0 3rem;
     text-align: left;
+  }
+}
+@media only screen and (min-width: 940px) {
+  .contact-page div {
+    display: flex;
+    align-items: flex-end;
   }
 }
 .contact-page ul {
@@ -490,7 +547,10 @@ header img {
   margin: 0 auto 0.7rem;
   background: var(--nav-bg);
 }
-@media only screen and (min-width: 1024px) {
+.contact-page li:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 940px) {
   .contact-page li {
     margin: 0 0 0.9rem;
   }
@@ -511,11 +571,48 @@ header img {
 .contact-page a i {
   font-size: 24px;
 }
+.contact-page .job {
+  margin: 1rem auto 0;
+  display: flex;
+  align-items: center;
+  width: 160px;
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-size: 12px;
+  color: var(--text);
+}
+@media only screen and (min-width: 940px) {
+  .contact-page .job {
+    width: 100%;
+    margin: 0 0 0.7rem 1.5rem;
+  }
+}
+.contact-page .job::before {
+  display: inline-block;
+  content: "";
+  width: 22px;
+  height: 12px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: #70e000;
+}
+@media only screen and (min-width: 940px) {
+  .contact-page .job::before {
+    width: 12px;
+  }
+}
+.contact-page .job.employed {
+  width: 190px;
+}
+.contact-page .job.employed::before {
+  background: #e71d36;
+}
 
 .links {
   display: none;
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .links {
     display: flex;
     grid-column: 7;
@@ -553,7 +650,7 @@ header img {
 .bg-detail path {
   fill: var(--nav-bg);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 940px) {
   .bg-detail {
     display: initial;
     max-width: initial;
