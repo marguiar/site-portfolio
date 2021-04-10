@@ -10,12 +10,12 @@ const links = document.querySelectorAll('ul a');
 
 function singlePageApplication() {
   function updatePage(newContent) {
+    const oldPage = document.querySelector('#root');
+    const oldTitle = document.querySelector('.title-container');
+
     const container = document.createElement('div');
     container.innerHTML = newContent;
-
-    const oldPage = document.querySelector('#root');
     const newPage = container.querySelector('#root');
-    const oldTitle = document.querySelector('.title-container');
     const newTitle = container.querySelector('.title-container');
 
     oldPage.innerHTML = newPage.innerHTML;
@@ -33,6 +33,7 @@ function singlePageApplication() {
   async function fetchPage(url) {
     const response = await fetch(url);
     const pageContent = await response.text();
+
     updatePage(pageContent);
     activeScripts();
   }
@@ -40,6 +41,7 @@ function singlePageApplication() {
   function handleClick(e) {
     e.preventDefault();
     const url = e.target.href;
+
     fetchPage(url);
     window.history.pushState(
       null,
