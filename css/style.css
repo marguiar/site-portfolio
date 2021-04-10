@@ -376,6 +376,9 @@ header img {
   margin: 0.5rem 0;
   text-indent: 5px;
 }
+.about-page a {
+  color: var(--highlight);
+}
 .about-page h4 {
   font-family: "Source Code Pro", monospace;
   letter-spacing: 0.05em;

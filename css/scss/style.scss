@@ -171,6 +171,10 @@ header {
     text-indent: 5px
   }
 
+  a {
+    color: var(--highlight);
+  }
+
   h4 {
     @include monospace(18);
     font-weight: bold;

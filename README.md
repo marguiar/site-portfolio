@@ -1,5 +1,8 @@
 #  Meu site/portfólio
 
+### [Site](https://marcosadev.netlify.app/)
+### [Protótipo no Figma](https://www.figma.com/file/FvFst2gKiNxcrc7grzCb3S/Portf%C3%B3lio)
+
 #### To-Do
  - [ ] Rotas em back-end para fazer o roteamento corretamente entre as páginas ao atualizar(erro 404 atualmente).
  - [ ] Dar um highlight no link ativo da navbar, inclusive ao usar os botões de prev e next do browser.
