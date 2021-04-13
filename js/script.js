@@ -6,9 +6,9 @@ import isEmployed from './modules/is-employed.js';
 menuMobile();
 toggleTheme();
 
-const links = document.querySelectorAll('ul a');
-
 function singlePageApplication() {
+  const links = document.querySelectorAll('ul a');
+
   function updatePage(newContent) {
     const oldPage = document.querySelector('#root');
     const oldTitle = document.querySelector('.title-container');
@@ -39,7 +39,6 @@ function singlePageApplication() {
   }
 
   function handleClick(e) {
-    e.preventDefault();
     const url = e.target.href;
 
     fetchPage(url);

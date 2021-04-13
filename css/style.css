@@ -223,6 +223,7 @@ button {
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 header {
@@ -610,6 +611,75 @@ header img {
 }
 .contact-page .job.employed::before {
   background: #e71d36;
+}
+.contact-page .modal-container {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  min-width: 100vw;
+  min-height: 100vh;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 50%;
+  z-index: 100;
+  display: none;
+  margin: 0 auto;
+}
+.contact-page .modal-container.active {
+  display: flex;
+}
+.contact-page .modal-container .modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--nav-bg);
+  border: 3px solid var(--text);
+  box-shadow: 0 0 0 4px var(--nav-bg);
+  width: 75%;
+  min-width: 260px;
+  max-width: 380px;
+  height: 160px;
+  margin: auto;
+}
+@media only screen and (min-width: 940px) {
+  .contact-page .modal-container .modal {
+    height: 180px;
+  }
+}
+.contact-page .modal-container .button-close {
+  position: absolute;
+  top: -17px;
+  right: -17px;
+  background: var(--highlight);
+  color: var(--body-bg);
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+}
+.contact-page .modal-container input {
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+.contact-page .modal-container .button-copy {
+  font-family: "Source Code Pro", monospace;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  background: var(--text);
+  color: var(--nav-bg);
+  width: 120px;
+  height: 30px;
+}
+@media only screen and (min-width: 940px) {
+  .contact-page .modal-container {
+    top: 52.7%;
+  }
 }
 
 .links {
