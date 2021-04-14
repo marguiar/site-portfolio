@@ -15,6 +15,14 @@
   --highlight: #e85d04;
 }
 
+@keyframes show-modal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes show-up {
   from {
     opacity: 0;
@@ -607,7 +615,15 @@ header img {
   }
 }
 .contact-page .job.employed {
-  width: 190px;
+  width: 180px;
+}
+@media only screen and (min-width: 940px) {
+  .contact-page .job.employed {
+    width: 240px;
+  }
+  .contact-page .job.employed::before {
+    width: 16px;
+  }
 }
 .contact-page .job.employed::before {
   background: #e71d36;
@@ -618,7 +634,7 @@ header img {
   min-width: 100vw;
   min-height: 100vh;
   transform: translate(-50%, -50%);
-  top: 45%;
+  top: 48%;
   left: 50%;
   z-index: 100;
   display: none;
@@ -626,6 +642,7 @@ header img {
 }
 .contact-page .modal-container.active {
   display: flex;
+  animation: show-modal 0.3s;
 }
 .contact-page .modal-container .modal {
   position: relative;
@@ -634,11 +651,11 @@ header img {
   justify-content: center;
   align-items: center;
   background: var(--nav-bg);
-  border: 3px solid var(--text);
-  box-shadow: 0 0 0 4px var(--nav-bg);
+  border: 4px solid var(--text);
+  box-shadow: 0 0 0 8px var(--nav-bg);
   width: 75%;
   min-width: 260px;
-  max-width: 380px;
+  max-width: 340px;
   height: 160px;
   margin: auto;
 }
@@ -655,10 +672,15 @@ header img {
   color: var(--body-bg);
   width: 32px;
   height: 32px;
-  font-size: 20px;
+  font-size: 24px;
+  border: 2px solid transparent;
+}
+.contact-page .modal-container .button-close:hover {
+  transform: scale(1.3);
 }
 .contact-page .modal-container input {
   width: 80%;
+  max-width: 220px;
   height: 30px;
   text-align: center;
   font-family: "Source Code Pro", monospace;
@@ -670,11 +692,16 @@ header img {
   letter-spacing: 0.05em;
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   background: var(--text);
   color: var(--nav-bg);
   width: 120px;
   height: 30px;
+  border: 2px solid transparent;
+}
+.contact-page .modal-container .button-copy:hover {
+  border: 2px solid var(--nav-bg);
+  box-shadow: 0 0 0 2px var(--text);
 }
 @media only screen and (min-width: 940px) {
   .contact-page .modal-container {

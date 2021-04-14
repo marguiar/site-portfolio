@@ -1,7 +1,7 @@
 import menuMobile from './modules/menuMobile.js';
 import toggleTheme from './modules/toggleTheme.js';
-import projectsNavigation from './modules/projects-navigation.js';
-import isEmployed from './modules/is-employed.js';
+import projectsPageScripts from './modules/projects-page-scripts.js';
+import contactPageScripts from './modules/contact-page-scripts.js';
 
 menuMobile();
 toggleTheme();
@@ -26,8 +26,8 @@ function singlePageApplication() {
   function activeScripts() {
     const pathName = window.location.pathname;
 
-    if (pathName === '/projetos') projectsNavigation();
-    else if (pathName === '/contato') isEmployed(false);
+    if (pathName === '/projetos') projectsPageScripts();
+    else if (pathName === '/contato') contactPageScripts();
   }
 
   async function fetchPage(url) {

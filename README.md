@@ -9,7 +9,7 @@
  - [ ] Encontrar maneiras de substituir funções por classes (Constructor não pega elementos em outras páginas).
  - [ ] Ajustar grid e remover a prop 'Contents' pois ainda não é totalmente compatível(CanIUse).
  - [ ] Transformar os links(tag a) em outras tags para retirar a bottom-tip do browser de qual caminho aquela url leva.
- - [ ] Adicionar modal ao clicar no link de e-mail, esse modal terá uma opção de copiar o e-mail.
+ - [x] Adicionar modal ao clicar no link de e-mail, esse modal terá uma opção de copiar o e-mail. (Resolver conflito com display contents)
  - [ ] Otimizar espaço útil do layout.
  - [ ] Breakpoint para tablets.
  - [ ] Otimizar código SASS e refatorar classes para o [BEM](http://getbem.com/introduction/).

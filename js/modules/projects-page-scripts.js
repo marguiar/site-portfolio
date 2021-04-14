@@ -1,4 +1,4 @@
-export default function projectsNavigation() {
+export default function projectsPageScripts() {
   const projectItems = document.querySelectorAll('.projects-items li');
   const projectHighlighted = document.querySelectorAll('.active-item section');
   const active = 'active';
