@@ -24,10 +24,10 @@ function singlePageApplication() {
   }
 
   function activeScripts() {
-    const pathName = window.location.pathname;
+    const { pathname } = window.location;
 
-    if (pathName === '/projetos') projectsPageScripts();
-    else if (pathName === '/contato') contactPageScripts();
+    if (pathname === '/projetos') projectsPageScripts();
+    else if (pathname === '/contato') contactPageScripts();
   }
 
   async function fetchPage(url) {
@@ -39,7 +39,8 @@ function singlePageApplication() {
   }
 
   function handleClick(e) {
-    const url = e.target.href;
+    let url = e.target.href;
+    if (url.slice(-1) !== '/') url = `pages/${e.target.pathname}.html`;
 
     fetchPage(url);
     window.history.pushState(
@@ -50,26 +51,24 @@ function singlePageApplication() {
   }
 
   window.addEventListener('popstate', () => {
-    let whichPage = window.location.pathname;
+    let { pathname } = window.location;
 
     if (
-      whichPage === '/sobre'
-      || whichPage === '/projetos'
-      || whichPage === '/contato'
+      pathname === '/sobre'
+      || pathname === '/projetos'
+      || pathname === '/contato'
     ) {
-      whichPage = `/pages${whichPage}.html`;
+      pathname = `/pages${pathname}.html`;
     }
 
-    fetchPage(whichPage);
+    fetchPage(pathname);
   });
 
   links.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const pathName = window.location.pathname;
-      if (link.id !== pathName) {
-        handleClick(e);
-      }
+      const { pathname } = window.location;
+      if (link.id !== pathname) handleClick(e);
     });
   });
 }
