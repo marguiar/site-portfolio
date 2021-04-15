@@ -57,9 +57,7 @@ function singlePageApplication() {
       pathname === '/sobre'
       || pathname === '/projetos'
       || pathname === '/contato'
-    ) {
-      pathname = `/pages${pathname}.html`;
-    }
+    ) pathname = `/pages${pathname}.html`;
 
     fetchPage(pathname);
   });

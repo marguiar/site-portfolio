@@ -1,6 +1,6 @@
 export default function projectsPageScripts() {
   const projectItems = document.querySelectorAll('.projects-items li');
-  const projectHighlighted = document.querySelectorAll('.active-item section');
+  const projectHighlighted = document.querySelectorAll('.active-item article');
   const active = 'active';
 
   projectItems[0].classList.add(active);

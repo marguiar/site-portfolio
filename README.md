@@ -8,12 +8,12 @@
  - [ ] Dar um highlight no link ativo da navbar, inclusive ao usar os botões de prev e next do browser.
  - [ ] Encontrar maneiras de substituir funções por classes (Constructor não pega elementos em outras páginas).
  - [ ] Ajustar grid e remover a prop 'Contents' pois ainda não é totalmente compatível(CanIUse).
- - [ ] Transformar os links(tag a) em outras tags para retirar a bottom-tip do browser de qual caminho aquela url leva.
+ - [x] ~~Transformar os links(tag a) em outras tags para retirar a bottom-tip do browser de qual caminho aquela url leva.~~
  - [x] Adicionar modal ao clicar no link de e-mail, esse modal terá uma opção de copiar o e-mail. (Resolver conflito com display contents)
  - [ ] Otimizar espaço útil do layout.
  - [ ] Breakpoint para tablets.
  - [ ] Otimizar código SASS e refatorar classes para o [BEM](http://getbem.com/introduction/).
- - [ ] Melhorar semântica no HTML.
+ - [x] ~~Melhorar semântica no HTML.~~
  - [ ] Implementar testes (falta estudar sobre).
  
  ## Tecnologias
@@ -59,6 +59,3 @@ Várias ideias e soluções para problemas não funcionavam ou traziam outros pr
  - No 'ouvinte' do PopState precisei manipular a URL também, pois ela vem exatamente como no href.
  - E pra fazer tudo isso funcionar como queria, passei o mesmo pathname como id nos links de navegação.
  - Precisei criar uma função p/ ativar scripts específicos de cada página, somente quando essa página estiver sendo acessada.
-
-
-Continua...
