@@ -207,10 +207,6 @@ nav .menu-button.active::before {
   width: 80px;
   height: 80px;
   margin: 0 auto;
-  color: white;
-  font-family: "Source Code Pro", monospace;
-  letter-spacing: 0.05em;
-  font-size: 1rem;
 }
 @media only screen and (min-width: 940px) {
   .lds-ellipsis {
@@ -224,7 +220,7 @@ nav .menu-button.active::before {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--text);
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
