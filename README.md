@@ -8,12 +8,13 @@
  - [ ] Dar um highlight no link ativo da navbar, inclusive ao usar os botões de prev e next do browser.
  - [ ] Encontrar maneiras de substituir funções por classes (Constructor não pega elementos em outras páginas).
  - [ ] Ajustar grid e remover a prop 'Contents' pois ainda não é totalmente compatível(CanIUse).
- - [x] ~~Transformar os links(tag a) em outras tags para retirar a bottom-tip do browser de qual caminho aquela url leva.~~
+ - [x] ~~Href limpo na origem e ajustado no js pra funcionar corretamente.~~
  - [x] Adicionar modal ao clicar no link de e-mail, esse modal terá uma opção de copiar o e-mail. (Resolver conflito com display contents)
  - [ ] Otimizar espaço útil do layout.
  - [ ] Breakpoint para tablets.
  - [ ] Otimizar código SASS e refatorar classes para o [BEM](http://getbem.com/introduction/).
  - [x] ~~Melhorar semântica no HTML.~~
+ - [x] ~~Loading durante o carregamento das páginas.~~
  - [ ] Implementar testes (falta estudar sobre).
  
  ## Tecnologias

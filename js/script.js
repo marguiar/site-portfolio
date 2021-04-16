@@ -31,6 +31,8 @@ function singlePageApplication() {
   }
 
   async function fetchPage(url) {
+    const loading = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+    document.querySelector('#root').innerHTML = loading;
     const response = await fetch(url);
     const pageContent = await response.text();
 
@@ -40,6 +42,7 @@ function singlePageApplication() {
 
   function handleClick(e) {
     let url = e.target.href;
+
     if (url.slice(-1) !== '/') url = `pages/${e.target.pathname}.html`;
 
     fetchPage(url);
