@@ -7,9 +7,9 @@
  - [ ] Rotas em back-end para fazer o roteamento corretamente entre as páginas ao atualizar(erro 404 atualmente).
  - [ ] Dar um highlight no link ativo da navbar, inclusive ao usar os botões de prev e next do browser.
  - [ ] Encontrar maneiras de substituir funções por classes (Constructor não pega elementos em outras páginas).
- - [ ] Ajustar grid e remover a prop 'Contents' pois ainda não é totalmente compatível(CanIUse).
+ - [x] ~~Ajustar grid e remover a prop 'Contents' pois ainda não é totalmente compatível(CanIUse).~~
  - [x] ~~Href limpo na origem e ajustado no js pra funcionar corretamente.~~
- - [x] Adicionar modal ao clicar no link de e-mail, esse modal terá uma opção de copiar o e-mail. (Resolver conflito com display contents)
+ - [x] ~~Adicionar modal ao clicar no link de e-mail, esse modal terá uma opção de copiar o e-mail.~~
  - [ ] Otimizar espaço útil do layout.
  - [ ] Breakpoint para tablets.
  - [ ] Otimizar código SASS e refatorar classes para o [BEM](http://getbem.com/introduction/).
@@ -24,18 +24,20 @@
  - Webpack para minificação dos scripts js em um único arquivo './js/main.js'
 
 Dependências de desenvolvimento
-- eslint, webpack e webpack-cli
+- sass, eslint, webpack e webpack-cli
 
 #### Como rodar:
 - ```npm i``` → p/ instalar as dependências.
 - ```npm run dev``` → p/ rodar em modo de desenvolvimento.
 - ```npm run build``` → p/ rodar em modo de produção.
+- ```npm i -g sass``` -> p/ instalar o SASS (opcional).
+- ```sass ./css/scss/style.scss ./css/style.css -w``` -> p/ rodar o SASS.
 
 ## Motivação
 Esse projeto foi feito com intuito de estudar o Javascript vanilla e conhecer mais essa linguagem, antes de passar para os frameworks. Estudei um pouco de React durante o curso full-stack da Recode porém não me sentia muito confortável em fazer aplicações nele, pois a base em javascript ainda não era muito boa. **E após ver que era possível fazer uma Single Page Application somente com javascript, decidi realizar esse projeto.**
 
 ## Desafios
-Como um iniciante, muitos conceitos ainda não são tão claros, por isso foi bem desafiador fazer esse projeto do zero em todos os aspectos.
+Como iniciante, muitos conceitos ainda não são tão claros, por isso foi desafiador fazer esse projeto do zero em todos os aspectos.
 Várias ideias e soluções para problemas não funcionavam ou traziam outros problemas, mas programação é isso aí não é mesmo? rs
 
 ##  Trilha do projeto

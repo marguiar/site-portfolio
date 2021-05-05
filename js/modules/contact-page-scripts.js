@@ -17,6 +17,7 @@ export default function contactPageScripts() {
     const emailButton = document.querySelector('.email');
     const modalContainer = document.querySelector('.modal-container');
     const navBar = document.querySelector('nav');
+    const contactLinks = document.querySelector('.links');
     const copyButton = document.querySelector('.button-copy');
     const active = 'active';
 
@@ -24,6 +25,7 @@ export default function contactPageScripts() {
       e.preventDefault();
       modalContainer.classList.add(active);
       navBar.style.zIndex = '-1';
+      contactLinks.style.zIndex = '-1';
     });
 
     modalContainer.addEventListener('click', (e) => {
@@ -33,6 +35,7 @@ export default function contactPageScripts() {
       ) {
         modalContainer.classList.remove(active);
         navBar.style.zIndex = '1';
+        contactLinks.style.zIndex = '1';
       }
     });
 

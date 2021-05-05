@@ -20,7 +20,6 @@ body {
   margin: 15px 20px;
 
   @include device(desktop) {
-    display: grid;
     grid-template-columns: 1fr 120px repeat(4, 1fr) 120px 1fr;
     grid-template-rows: 120px 1fr 160px;
     min-height: 100vh;
@@ -170,7 +169,6 @@ header {
 .about-page {
   p {
     margin: .5rem 0;
-    text-indent: 5px
   }
 
   a {

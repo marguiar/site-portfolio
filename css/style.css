@@ -126,15 +126,15 @@ nav .menu-button.active::before {
 }
 @media only screen and (min-width: 940px) {
   nav {
-    display: contents;
+    background: none;
+    max-width: 530px;
+    grid-column: 2/6;
     position: initial;
     width: 100%;
     align-self: center;
+    padding: 0;
   }
   nav img {
-    grid-column: 2;
-    grid-row: 3;
-    align-self: center;
     animation: show-up 1s forwards;
   }
 }
@@ -185,6 +185,7 @@ nav .menu-button.active::before {
 }
 @media only screen and (min-width: 940px) {
   .menu {
+    width: initial;
     visibility: initial;
     position: initial;
     background: none;
@@ -286,7 +287,6 @@ body {
 }
 @media only screen and (min-width: 940px) {
   body {
-    display: grid;
     grid-template-columns: 1fr 120px repeat(4, 1fr) 120px 1fr;
     grid-template-rows: 120px 1fr 160px;
     min-height: 100vh;
@@ -450,7 +450,6 @@ header img {
 
 .about-page p {
   margin: 0.5rem 0;
-  text-indent: 5px;
 }
 .about-page a {
   color: var(--highlight);
