@@ -110,7 +110,7 @@ header {
     height: 100%;
     min-height: initial;
     width: 100%;
-    grid-column: 3 / 7;
+    grid-column: 3 / 8;
     grid-row: 2 / 3;
   }
 }
@@ -130,7 +130,7 @@ header {
     justify-content: center;
 
     p {
-      @include monospace(18);
+      @include monospace(16);
     }
   }
 }
@@ -275,7 +275,7 @@ header {
 
       div {
         @include device(desktop) {
-          max-width: 420px;
+          max-width: 360px;
         }
       }
     }
