@@ -59,6 +59,9 @@ function singlePageApplication() {
 
   window.addEventListener('popstate', () => {
     let { pathname } = window.location;
+    links.forEach((navLink) => navLink.classList.remove('active'));
+    const activePage = document.getElementById(`${pathname}`);
+    activePage.classList.add('active');
 
     if (
       pathname === '/sobre'
