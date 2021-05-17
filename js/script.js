@@ -72,6 +72,9 @@ function singlePageApplication() {
   links.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
+      links.forEach((navLink) => navLink.classList.remove('active'));
+      link.classList.add('active');
+
       const { pathname } = window.location;
       if (link.id !== pathname) handleClick(e);
     });
