@@ -5,7 +5,7 @@
 
 #### To-Do
  - [ ] Rotas em back-end para fazer o roteamento corretamente entre as páginas ao atualizar(erro 404 atualmente).
- - [ ] Dar um highlight no link ativo da navbar, inclusive ao usar os botões de prev e next do browser.
+ - [x] Dar um highlight no link ativo da navbar, inclusive ao usar os botões de prev e next do browser.
  - [ ] Encontrar maneiras de substituir funções por classes (Constructor não pega elementos em outras páginas).
  - [x] ~~Ajustar grid e remover a prop 'Contents' pois ainda não é totalmente compatível(CanIUse).~~
  - [x] ~~Href limpo na origem e ajustado no js pra funcionar corretamente.~~
