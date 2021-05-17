@@ -43,11 +43,11 @@ export default function contactPageScripts() {
       if (modalContainer.classList[1] === active) {
         document.querySelector('#email').select();
         document.execCommand('copy');
-        copyButton.innerHTML = 'Copiado =D';
-        copyButton.style.background = '#70e000';
+        copyButton.innerHTML = 'Copiado';
+        copyButton.classList.add('copied');
 
         setTimeout(() => {
-          copyButton.style.background = 'var(--text)';
+          copyButton.classList.remove('copied');
           copyButton.innerHTML = 'Copiar';
         }, 2000);
       }
