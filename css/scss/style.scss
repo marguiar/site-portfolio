@@ -448,9 +448,9 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: var(--nav-bg);
-      border: 4px solid var(--text);
-      box-shadow: 0 0 0 8px var(--nav-bg);
+      background: var(--body-bg);
+      border: 4px solid var(--nav-bg);
+      box-shadow: 0 0 0 8px var(--body-bg);
       width: 75%;
       min-width: 260px;
       max-width: 340px;
@@ -484,21 +484,33 @@ header {
       height: 30px;
       text-align: center;
       @include monospace(14);
+      background: var(--nav-bg);
+      color: var(--text);
+      border: none;
     }
 
     .button-copy {
       @include monospace(16);
       font-weight: bold;
       margin-top: 1.5rem;
-      background: var(--text);
-      color: var(--nav-bg);
+      background: var(--nav-bg);
+      color: var(--text);
       width: 120px;
       height: 30px;
       border: 2px solid transparent;
 
       &:hover {
-        border: 2px solid var(--nav-bg);
+        border: 2px solid var(--body-bg);
         box-shadow: 0 0 0 2px var(--text);
+      }
+
+      &.copied {
+        background: #52b788;
+        color: #eee;
+
+        &:hover {
+          box-shadow: 0 0 0 2px #52b788;
+        }
       }
     }
 

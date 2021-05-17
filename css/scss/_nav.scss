@@ -94,6 +94,7 @@ nav {
 
       &.active {
         color: var(--highlight);
+        text-decoration: overline;
       }
 
       @include device(desktop) {
