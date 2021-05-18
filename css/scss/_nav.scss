@@ -21,23 +21,23 @@ nav {
     @include monospace(16);
     font-weight: bold;
     color: var(--title-icons);
-    padding: .2rem .3rem;
+    padding: 0.2rem 0.3rem;
     width: 80px;
     height: 45px;
     display: flex;
     align-items: center;
 
     &::before {
-      content: '\2630';
+      content: "\2630";
       font-size: 20px;
       color: var(--title-icons);
-      margin-right: .2rem;
-      transition: .3s;
+      margin-right: 0.2rem;
+      transition: 0.3s;
     }
 
     &.active::before {
-        transform: rotate(-90deg);
-      }
+      transform: rotate(-90deg);
+    }
 
     @include device(desktop) {
       display: none;
@@ -55,7 +55,7 @@ nav {
 
     img {
       animation: show-up 1s forwards;
-      margin-right: 63px;
+      margin: 0 63px 0 .5rem;
     }
   }
 }
@@ -74,17 +74,18 @@ nav {
   list-style: none;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s .1s, opacity .2s linear;
+  transition: visibility 0s 0.1s, opacity 0.2s linear;
 
   &.active {
     visibility: initial;
-    opacity: .97;
-    transition: .2s linear;
+    opacity: 0.97;
+    transition: 0.2s linear;
   }
 
   li {
     width: 140px;
     font-weight: bold;
+    position: relative;
 
     a {
       @include monospace(16);
@@ -94,7 +95,23 @@ nav {
 
       &.active {
         color: var(--highlight);
-        text-decoration: overline;
+
+        &::before {
+          position: absolute;
+          left: 5px;
+          top: 7px;
+          content: "";
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: var(--highlight);
+
+          @include device(desktop) {
+            left: 50%;
+            transform: translate(-50%);
+            top: -10px;
+          }
+        }
       }
 
       @include device(desktop) {
@@ -118,7 +135,7 @@ nav {
     opacity: 1;
     justify-content: flex-start;
     animation: show-up 1s forwards;
-    margin-left: -5px;
+    margin-left: -14px;
 
     li {
       width: initial;
