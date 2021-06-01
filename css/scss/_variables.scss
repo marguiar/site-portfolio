@@ -14,8 +14,8 @@
   --highlight: #4361ee;
 }
 
-$serif: 'Cormorant Upright';
-$monospace: 'Source Code Pro';
+$serif: 'Cormorant Upright', serif;
+$monospace: 'Source Code Pro', monospace;
 
 @mixin serif($size) {
   font-family: $serif, serif;
