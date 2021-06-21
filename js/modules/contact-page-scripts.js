@@ -11,7 +11,7 @@ export default function contactPageScripts() {
     }
   }
 
-  isEmployed(false);
+  // isEmployed(false);
 
   function modalScripts() {
     const emailButton = document.querySelector('.email');
