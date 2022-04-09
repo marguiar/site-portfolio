@@ -4,7 +4,7 @@
 ### [Protótipo no Figma](https://www.figma.com/file/FvFst2gKiNxcrc7grzCb3S/Portf%C3%B3lio)
 
 #### To-Do
- - [ ] Rotas em back-end para fazer o roteamento corretamente entre as páginas ao atualizar(erro 404 atualmente).
+ - [x] ~~Redirecionar todas as rotas para a index(Para evitar 404).~~
  - [x] Dar um highlight no link ativo da navbar, inclusive ao usar os botões de prev e next do browser.
  - [ ] Encontrar maneiras de substituir funções por classes (Constructor não pega elementos em outras páginas).
  - [x] ~~Ajustar grid e remover a prop 'Contents' pois ainda não é totalmente compatível(CanIUse).~~
