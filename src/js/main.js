@@ -47,13 +47,13 @@ function singlePageApplication() {
   function handleClick(e) {
     let url = e.target.href;
 
-    if (url.slice(-1) !== '/') url = `pages/${e.target.pathname}.html`;
+    if (url.slice(-1) !== '/') url = `src/pages/${e.target.pathname}.html`;
 
     fetchPage(url);
     window.history.pushState(
       null,
       null,
-      url.replace('pages/', '').replace('.html', '').replace('index', ''),
+      url.replace('src/pages/', '').replace('.html', '').replace('index', ''),
     );
   }
 
